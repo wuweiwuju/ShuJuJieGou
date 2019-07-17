@@ -1,0 +1,6 @@
+﻿  Stack.c
+D:\代码\shujujiegou\栈的基本实现\Stack.c(35,15): warning C4098:  “StackPush”:“void”函数返回值
+  test.c
+  正在生成代码...
+D:\代码\shujujiegou\栈的基本实现\Stack.c(47,14): warning C4098:  “StackPop”:“void”函数返回值
+  栈的基本实现.vcxproj -> D:\代码\shujujiegou\栈的基本实现\Debug\栈的基本实现.exe

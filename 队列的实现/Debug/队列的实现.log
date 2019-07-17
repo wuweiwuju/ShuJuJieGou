@@ -1,0 +1,16 @@
+﻿  test.c
+D:\代码\shujujiegou\队列的实现\test.c(6,15): warning C4133:  “函数”: 从“QueueNode *”到“Queue *”的类型不兼容
+D:\代码\shujujiegou\队列的实现\test.c(7,15): warning C4133:  “函数”: 从“QueueNode *”到“Queue *”的类型不兼容
+D:\代码\shujujiegou\队列的实现\test.c(8,15): warning C4133:  “函数”: 从“QueueNode *”到“Queue *”的类型不兼容
+D:\代码\shujujiegou\队列的实现\test.c(9,15): warning C4133:  “函数”: 从“QueueNode *”到“Queue *”的类型不兼容
+D:\代码\shujujiegou\队列的实现\test.c(10,15): warning C4133:  “函数”: 从“QueueNode *”到“Queue *”的类型不兼容
+D:\代码\shujujiegou\队列的实现\test.c(11,15): warning C4133:  “函数”: 从“QueueNode *”到“Queue *”的类型不兼容
+D:\代码\shujujiegou\队列的实现\test.c(12,33): warning C4133:  “函数”: 从“QueueNode *”到“Queue *”的类型不兼容
+D:\代码\shujujiegou\队列的实现\test.c(14,34): warning C4133:  “函数”: 从“QueueNode *”到“Queue *”的类型不兼容
+D:\代码\shujujiegou\队列的实现\test.c(16,24): warning C4133:  “函数”: 从“QueueNode *”到“Queue *”的类型不兼容
+D:\代码\shujujiegou\队列的实现\test.c(18,25): warning C4133:  “函数”: 从“QueueNode *”到“Queue *”的类型不兼容
+D:\代码\shujujiegou\队列的实现\test.c(20,14): warning C4133:  “函数”: 从“QueueNode *”到“Queue *”的类型不兼容
+D:\代码\shujujiegou\队列的实现\test.c(21,15): warning C4133:  “函数”: 从“QueueNode *”到“Queue *”的类型不兼容
+D:\代码\shujujiegou\队列的实现\test.c(22,18): warning C4133:  “函数”: 从“QueueNode *”到“Queue *”的类型不兼容
+D:\代码\shujujiegou\队列的实现\test.c(23,15): warning C4133:  “函数”: 从“QueueNode *”到“Queue *”的类型不兼容
+  队列的实现.vcxproj -> D:\代码\shujujiegou\队列的实现\Debug\队列的实现.exe
