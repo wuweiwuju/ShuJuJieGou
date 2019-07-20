@@ -1,0 +1,6 @@
+﻿  SList.c
+D:\代码\shujujiegou\单链表\SList.c(37,14): warning C4098:  “SListPopFront”:“void”函数返回值
+  test.c
+  正在生成代码...
+D:\代码\shujujiegou\单链表\SList.c(72,14): warning C4098:  “SListPopBack”:“void”函数返回值
+  test_7_8.vcxproj -> D:\代码\shujujiegou\单链表\Debug\test_7_8.exe
