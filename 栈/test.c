@@ -5,7 +5,13 @@ int main()
 {
 	Stack ps;
 	StackInit(&ps);
-	StackPush(&ps, 2);
+	char* s = "{[]}";
+	StackPush(&ps, '{' );
+	StackPush(&ps, '[');
+	StackPush(&ps, ']');
+	StackPush(&ps, '}');
+	printf("%d\n",isValid(s));
+	/*StackPush(&ps, 2);
 	StackPush(&ps, 5);
 	StackPush(&ps, 8);
 	StackPush(&ps, 6);
@@ -14,7 +20,7 @@ int main()
 	printf("%d\n", StackSize(&ps));
 	printf("%d\n", StackEmpty(&ps));
 	StackPrint(&ps);
-	//StackDestroy(&ps);
+	StackDestroy(&ps);*/
 	system("pause");
 	return 0;
 }

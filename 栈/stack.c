@@ -37,14 +37,14 @@ STDataType StackTop(Stack* ps)
 	assert(ps);
 	if (ps->_top == 0)
 	{
-		return;
+		return NULL;
 	}
 	return ps->_a[ps->_top-1];
 }
 int StackEmpty(Stack* ps)
 {
 	assert(ps);
-	return ps->_top == 0 ? 0 : 1;
+	return ps->_top;
 }
 int StackSize(Stack* ps)
 {
@@ -54,16 +54,14 @@ int StackSize(Stack* ps)
 void StackDestroy(Stack* ps)
 {
 	assert(ps);
-	if (ps->_top == 0)
+	if (ps->_a != NULL)
 	{
-		return;
-	}
-	while (ps->_top != 0)
-	{
-		StackPop(&ps);
+		free(ps->_a);
+		ps->_a = NULL;
+		ps->_capacity = ps->_top = 0;
 	}
 }
-void StackPrint(Stack* ps)
+/*void StackPrint(Stack* ps)
 {
 	assert(ps);
 	if (ps->_top == 0)
@@ -76,4 +74,74 @@ void StackPrint(Stack* ps)
 		ps->_top--;
 	}
 	printf("NULL\n");
+}*/
+bool isValid(char* s) {
+	Stack ch;
+	StackInit(&ch);
+	while (*s)
+	{
+		if (*s == '(' || *s == '[' || *s == '{')
+		{
+			StackPush(&ch, *s);
+		}
+		else if (*s == ')')
+		{
+			if (StackEmpty(&ch) == 0)
+				return false;
+
+			else
+			{
+				if (StackTop(&ch) == '(')
+				{
+					StackPop(&ch);
+				}
+				else
+				{
+					StackDestroy(&ch);
+					return false;
+				}
+			}
+		}
+		else if (*s == ']')
+		{
+			if (StackEmpty(&ch) == 0)
+				return false;
+			else
+			{
+				if (StackTop(&ch) == '[')
+				{
+					StackPop(&ch);
+				}
+				else
+				{
+					StackDestroy(&ch);
+					return false;
+				}
+			}
+		}
+		else if (*s == '}')
+		{
+			if (StackEmpty(&ch) == 0)
+				return false;
+			else
+			{
+				if (StackTop(&ch) == '{')
+				{
+					StackPop(&ch);
+				}
+				else
+				{
+					StackDestroy(&ch);
+					return false;
+				}
+			}
+		}
+		++s;
+	}
+
+	if (StackEmpty(&ch) == 0)
+		return true;
+
+	return false;
+
 }

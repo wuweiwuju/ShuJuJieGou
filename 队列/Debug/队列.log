@@ -1,0 +1,3 @@
+﻿  Queue.c
+  D:\代码\shujujiegou\队列\Queue.c(18) : warning C4715: “BuyQueueNode”: 不是所有的控件路径都返回值
+  队列.vcxproj -> D:\代码\shujujiegou\队列\Debug\队列.exe

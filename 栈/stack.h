@@ -4,20 +4,22 @@
 #include<stdlib.h>
 #include<malloc.h>
 #include<assert.h>
+#include <stdbool.h>
 
-typedef int STDataType;
+typedef char STDataType;
 
 typedef struct Stack
 {
-	STDataType* _a;
-	int _top;
-	int _capacity;
+	STDataType* _a;//动态实现
+	int _top;//有效的数据，栈顶
+	int _capacity;//容量的大小
 }Stack;
 
 void StackInit(Stack* ps);
 void StackDestroy(Stack* ps);
-void StackPush(Stack* ps, STDataType x);
-void StackPop(Stack* ps);
+void StackPush(Stack* ps, STDataType x);//压栈
+void StackPop(Stack* ps);//出栈
 STDataType StackTop(Stack* ps);
 int StackEmpty(Stack* ps);
 int StackSize(Stack* ps);
+bool isValid(char* s);
