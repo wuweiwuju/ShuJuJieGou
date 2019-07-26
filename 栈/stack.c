@@ -75,25 +75,103 @@ void StackDestroy(Stack* ps)
 	}
 	printf("NULL\n");
 }*/
+//bool isValid(char* s) {
+//	Stack ch;
+//	StackInit(&ch);
+//	while (*s)
+//	{
+//		if (*s == '(' || *s == '[' || *s == '{')
+//		{
+//			StackPush(&ch, *s);
+//		}
+//		else if (*s == ')')
+//		{
+//			if (StackEmpty(&ch) == 0)
+//				return false;
+//
+//			else
+//			{
+//				if (StackTop(&ch) == '(')
+//				{
+//					StackPop(&ch);
+//				}
+//				else
+//				{
+//					StackDestroy(&ch);
+//					return false;
+//				}
+//			}
+//		}
+//		else if (*s == ']')
+//		{
+//			if (StackEmpty(&ch) == 0)
+//				return false;
+//			else
+//			{
+//				if (StackTop(&ch) == '[')
+//				{
+//					StackPop(&ch);
+//				}
+//				else
+//				{
+//					StackDestroy(&ch);
+//					return false;
+//				}
+//			}
+//		}
+//		else if (*s == '}')
+//		{
+//			if (StackEmpty(&ch) == 0)
+//				return false;
+//			else
+//			{
+//				if (StackTop(&ch) == '{')
+//				{
+//					StackPop(&ch);
+//				}
+//				else
+//				{
+//					StackDestroy(&ch);
+//					return false;
+//				}
+//			}
+//		}
+//		++s;
+//	}
+//
+//	if (StackEmpty(&ch) == 0)
+//		return true;
+//
+//	return false;
+//
+//}
 bool isValid(char* s) {
 	Stack ch;
 	StackInit(&ch);
 	while (*s)
 	{
-		if (*s == '(' || *s == '[' || *s == '{')
+		switch (*s)
 		{
+		case'[':
+		case'{':
+		case'(':
 			StackPush(&ch, *s);
-		}
-		else if (*s == ')')
-		{
+			break;
+		case']':
+		case'}':
+		case')':
 			if (StackEmpty(&ch) == 0)
+			{
 				return false;
-
+			}
 			else
 			{
-				if (StackTop(&ch) == '(')
+				if ((StackTop(&ch) == '(' && *s == ')') ||
+					(StackTop(&ch) == '[' && *s == ']')||
+					(StackTop(&ch) == '{' && *s == '}'))
 				{
 					StackPop(&ch);
+					break;
 				}
 				else
 				{
@@ -102,41 +180,7 @@ bool isValid(char* s) {
 				}
 			}
 		}
-		else if (*s == ']')
-		{
-			if (StackEmpty(&ch) == 0)
-				return false;
-			else
-			{
-				if (StackTop(&ch) == '[')
-				{
-					StackPop(&ch);
-				}
-				else
-				{
-					StackDestroy(&ch);
-					return false;
-				}
-			}
-		}
-		else if (*s == '}')
-		{
-			if (StackEmpty(&ch) == 0)
-				return false;
-			else
-			{
-				if (StackTop(&ch) == '{')
-				{
-					StackPop(&ch);
-				}
-				else
-				{
-					StackDestroy(&ch);
-					return false;
-				}
-			}
-		}
-		++s;
+		s++;
 	}
 
 	if (StackEmpty(&ch) == 0)
@@ -145,3 +189,4 @@ bool isValid(char* s) {
 	return false;
 
 }
+

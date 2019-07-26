@@ -20,7 +20,7 @@ typedef struct Queue
 }Queue;
 
 void QueueInit(Queue* pq);
-void QueueDestroy(Queue* pq);
+void QueueDestory(Queue* pq);
 QueueNode* BuyQueueNode(QUDataType x);
 void QueuePush(Queue* pq, QUDataType x);
 void QueuePop(Queue* pq);

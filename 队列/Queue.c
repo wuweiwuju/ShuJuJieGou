@@ -15,17 +15,20 @@ QueueNode* BuyQueueNode(QUDataType x)
 	}
 	newnode->_data = x;
 	newnode->_next = NULL;
+	return newnode;
 }
 void QueuePush(Queue* pq, QUDataType x)
 {
 	assert(pq);
-	QueueNode* newnode = BuyQueueNode(x);
 	if (pq->_front == NULL)
 	{
-		pq->_front = pq->_rear = newnode;
+		pq->_front = pq->_rear = BuyQueueNode(x);
 	}
-	pq->_rear->_next = newnode;
-	pq->_rear = newnode;
+	else
+	{
+		pq->_rear->_next = BuyQueueNode(x);
+		pq->_rear = pq->_rear->_next;
+	}
 }
 void QueuePop(Queue* pq)
 {
@@ -66,7 +69,7 @@ int QueueSize(Queue* pq)
 	}
 	return count;
 }
-void QueueDestroy(Queue* pq)
+void QueueDestory(Queue* pq)
 {
 	assert(pq);
 	QueueNode* cur = pq->_front;
@@ -76,8 +79,9 @@ void QueueDestroy(Queue* pq)
 		free(cur);
 		cur = next;
 	}
-
+	pq->_front = pq->_rear = NULL;
 }
+
 void TestQueue()
 {
 	Queue q;
@@ -97,5 +101,5 @@ void TestQueue()
 		q._front = q._front->_next;
 	}
 	printf("NULL\n");
-	QueueDestroy(&q);
+	QueueDestory(&q);
 }
