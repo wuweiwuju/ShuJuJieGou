@@ -127,6 +127,15 @@ void HeapPop(Heap* hp)
 
 
 }
+void HeapSort(int* a, int n)
+{
+	//升序 建大堆
+	for (int i = (n - 2) / 2; i >= 0; --i)
+	{
+		AdjustDown(a, n, i);
+	}
+
+}
 int HeapSize(Heap* hp)
 {
 	assert(hp);
@@ -154,3 +163,4 @@ int main()
 }
 
 //堆是用来top k问题
+//1000 个数里面找最大的前十个数
