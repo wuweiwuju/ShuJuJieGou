@@ -53,12 +53,12 @@ void AdjustDown(HPDataType* a, int n, int root)
 	while (child < n)
 	{
 		//找左右孩子小的
-		if (child + 1 < n && a[child + 1] > a[child])
+		if (child + 1 < n && a[child + 1] < a[child])
 		{
 			++child;
 		}
 
-		if (a[parent] < a[child])
+		if (a[parent] > a[child])
 		{
 			HPDataType tmp = a[parent];
 			a[parent] = a[child];
@@ -134,7 +134,12 @@ void HeapSort(int* a, int n)
 	{
 		AdjustDown(a, n, i);
 	}
-
+	int end = n - 1;
+	while (end--)
+	{
+		Swap(&a[end], &a[0]);
+		AdjustDown(a, end, 0);
+	}
 }
 int HeapSize(Heap* hp)
 {
@@ -153,6 +158,15 @@ int HeapEmpty(Heap* hp)
 
 	return hp->_size == 0 ? 0 : 1;
 }
+void HeapSort(int* a, int n)
+{
+	//升序 建大堆
+	for (int i = (n - 2) / 2; i >= 0; --i)
+	{
+		AdjustDown(a, n, i);
+	}
+
+}
 int main()
 {
 	int a[] = { 1,2,5,8,9,4,6,0,15,38};
@@ -163,4 +177,8 @@ int main()
 }
 
 //堆是用来top k问题
+
 //1000 个数里面找最大的前十个数
+//1000亿个数里面找最大的前十个数
+//可以建个十个数的小堆  将1000亿个数遍历一遍进堆，只要比10个数堆顶的数大就进堆，然后在向下调整
+//继续遍历，最后得到的就是最大的十个数
