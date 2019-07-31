@@ -1,0 +1,4 @@
+﻿  test.c
+D:\代码\shujujiegou\二叉树的遍历\test.c(32,14): warning C4098:  “InOrder”:“void”函数返回值
+D:\代码\shujujiegou\二叉树的遍历\test.c(78,13): warning C4013:  “gets”未定义；假设外部返回 int
+  二叉树的遍历.vcxproj -> D:\代码\shujujiegou\二叉树的遍历\Debug\二叉树的遍历.exe
