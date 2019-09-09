@@ -3,8 +3,10 @@
 //2.内部排序 小规模排序：插入排序 / 选择排序 /交换排序
 //3.外部排序 大规模排序：归并排序
 //4.
-#include<stdio.h>
-#include<stdlib.h>
+//#include<stdio.h>
+//#include<stdlib.h>
+#include<iostream>
+using namespace std;
 //void sort(int a[], int sz)
 //{
 //	int i = 0;
@@ -60,7 +62,7 @@
 //空间复杂度：O(1)
 //由于多次插入排序，我们知道一次插入排序是稳定的，不会改变相同元素的相对顺序，但在不同的插入排序过程中，相同的元素可能在各自的插入排序中移动，最后其稳定性就会被打乱，所以shell排序是不稳定的。
 //场景：数据量大  杂乱的排序
-void Shellsort(int* array, int sz)
+void Shellsor(int* array, int sz)
 {
 	int gap = sz; // 10  4  2  1
 	//while (gap != gap / 3 + 1)
@@ -86,12 +88,15 @@ int main()
 {
 	int arr[] = { 1,5,2,6,9,7,4,3,10 };
 	int size = sizeof(arr) / sizeof(int);
-	Shellsort(arr, size);
-	for (int i = 0; i < size; i++)
+	Shellsor(arr, size);
+	/*for (int i = 0; i < size; i++)
 	{
 		printf("%d ", arr[i]);
+	}*/
+	for (auto i : arr)
+	{
+		cout << i << " ";
 	}
-	printf("\n");
 	system("pause");
 	return 0;
 }
