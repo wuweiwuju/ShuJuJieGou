@@ -17,6 +17,10 @@ void InsertSort(int* a,int n)
 				swap(a[end], a[temp]);
 				temp--;
 			}
+			else
+			{
+				break;
+			}
 			end--;
 		}
 	}
@@ -38,6 +42,10 @@ void ShellSort(int* a, int n)
 				{
 					swap(a[end], a[temp]);
 					temp -= gap;
+				}
+				else
+				{
+					break;
 				}
 				end -= gap;
 			}
