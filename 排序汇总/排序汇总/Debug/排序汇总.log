@@ -1,0 +1,7 @@
+﻿  test.cpp
+d:\代码\shujujiegou\排序汇总\排序汇总\test.cpp(16): warning C4018: “<”: 有符号/无符号不匹配
+d:\代码\shujujiegou\排序汇总\排序汇总\test.cpp(47): warning C4018: “<”: 有符号/无符号不匹配
+d:\代码\shujujiegou\排序汇总\排序汇总\test.cpp(147): warning C4018: “<”: 有符号/无符号不匹配
+d:\代码\shujujiegou\排序汇总\排序汇总\test.cpp(149): warning C4018: “<”: 有符号/无符号不匹配
+d:\代码\shujujiegou\排序汇总\排序汇总\test.cpp(235): warning C4018: “<”: 有符号/无符号不匹配
+  排序汇总.vcxproj -> D:\代码\shujujiegou\排序汇总\Debug\排序汇总.exe
